@@ -1,12 +1,20 @@
 # Mini-Greenhuse - AgroTech final project
 This project monitors and controls VPD in a small greenhouse. Temperature and humidity are measured to calculate VPD, which drives a fan or mist to optimize conditions.
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Background - VPD and Tomatoes](#background---vpd-and-tomatoes)
+- [Hardware and assembly](#hardware-and-assembly)
+- [Data Collected](#data-collected)
+- [VPD Control Logic](#vpd-control-logic)
+
+
 ## Introduction
 In our final project, we developed a mini-greenhouse equipped with temperature, humidity, and leaf wetness sensors. These sensors continuously monitor both indoor and outdoor conditions.
 Using the collected data, we calculate the Vapor Pressure Deficit (VPD) to assess the plant environment.
 Our model plant is tomato, and based on its optimal growth conditions, the system controls humidity using a fan or mist sprayer to maintain ideal growing conditions.
 
-## Background - VPD and Tomatos
+## Background - VPD and Tomatoes
 
 ### VPD
 
@@ -26,7 +34,18 @@ Therefore, VPD has a major impact on plant growth and fruit production, making i
 <p align="center">
 <img width="300" height="676" alt="image" src="https://github.com/user-attachments/assets/5fc37e92-b156-4970-aa00-13122fd66a40" />
 </p>
-* Stomatal conductance is the rate of gas exchange between the leaf and the atmosphere through the stomata, regulating transpiration and CO₂ uptake for photosynthesis.
+Stomatal conductance is the rate of gas exchange between the leaf and the atmosphere through the stomata, regulating transpiration and CO₂ uptake for photosynthesis.
+
+
+### _VPD Calculation_
+
+The formula for calculating VPD using temperature and humidity sensor data is as follows:
+
+VPD = SVP × (1 - RH/100)
+SVP = 0.6108 × exp(17.27 × T / (T + 237.3))
+* T = Temperature in Celsius (°C)
+* RH = Relative Humidity (%)
+* VPD result in kPa
 
 ### Tomatoes 🍅 
 
@@ -53,7 +72,7 @@ The general recommended VPD range for each growth phase is as follows:
 | Flowering           | 1.0 – 1.2               |
 | Fruiting            | 1.2 – 1.6               |
 
-We dcieded in this project simulates the vegetative growth phase of tomato plants. 
+We decided in this project to simulates the vegetative growth phase of tomato plants. 
 
 
 ## Hardware and assembly
@@ -104,18 +123,37 @@ The system monitors both indoor and outdoor conditions to decide whether to **ve
 ### [Data Collected](https://thingspeak.mathworks.com/channels/3222028)
 
 1. **VPD** (calculated from temperature & humidity via SHT31)   - both indoor and outdoor
-2. **Leaf Wetness** (via analog sensor)  
-3. **Plant Growth Status** (based on VPD range: 0-100 - 0 for bad grouth conditions 100 for the best)  
+2. **Leaf Wetness** (RAW - via analog sensor ; Leaf state - 1 for dry, 0 for wet )  
+3. **Plant Growth Status** (based on VPD range: 0-100 - 0 for bad growth conditions 100 for the best)  
 4. **Fan State** (1 for ON ; 0 for OFF)
 5. **Mist state** (1 for ON ; 0 for OFF)
 
 ### VPD Control Logic
 
-The system targets a VPD range of **0.8–1.1 kPa**, corresponding to the vegetative growth stage, and controls the environment using the following logic:
+The system targets a VPD range of **0.8–1.2 kPa**, corresponding to the vegetative growth stage, and controls the environment using the following logic:
 
-| Condition                          | Action |
-|-----------------------------------|--------|
-| **VPD too low (indoor)**           | Fan ON → increase VPD via airflow |
-| **VPD too high + leaf dry**        | Mist ON → increase leaf moisture, reduce VPD |
-| **VPD too high + leaf wet**        | Do nothing (leaf already moist) |
-| **VPD optimal**                     | All actuators OFF |
+
+| Condition                              | Action |
+|---------------------------------------|--------|
+| **VPD too low (indoor)**               | Fan ON (only if outdoor air is drier and temperature is safe) to increase effective VPD via air exchange |
+| **VPD too high + leaf dry**            | Mist ON via MQTT to increase leaf moisture and reduce VPD |
+| **VPD too high + leaf wet**            | No action – misting is blocked to prevent over-wetting and leaf rot |
+| **VPD within optimal range**           | All actuators OFF |
+
+```mermaid
+flowchart TD
+    A[VPD too low indoor]
+    A -->|Yes| B[Outdoor air dry and temp > 18°C]
+    A -->|No| E[VPD too high indoor]
+
+    B -->|Yes| C[Fan ON]
+    B -->|No| D[All OFF]
+
+    E -->|Yes| F[Leaf dry]
+    E -->|No| D
+
+    F -->|Yes| G[Mist ON MQTT]
+    F -->|No| D
+
+  
+
