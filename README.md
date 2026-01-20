@@ -9,6 +9,7 @@ This project monitors and controls VPD in a small greenhouse. Temperature and hu
 - [Hardware and assembly](#hardware-and-assembly)
   - [Electronics](#electronics)
   - [General Structure](#general-structure)
+  - [Setup Wiring](setup-wiring)
   - [Data Collected](#data-collected)
   - [VPD Control Logic](#vpd-control-logic)
 
@@ -126,6 +127,46 @@ The system monitors both indoor and outdoor conditions to decide whether to **ve
 <p align="center">
 <img width="565" height="597" alt="image" src="https://github.com/user-attachments/assets/571eaee7-88a2-4c11-b926-49f25b561075" />
 </p>
+
+### Setup Wiring
+Connect the components to the ESP32 Firebeetle board as shown in the provided diagram
+### _SHT31 Temperature and Humidity Sensors:_
+• Indoor Sensor I Connect to the primary I2C pins (SDA to 21 SCL to 22)
+
+• Outdoor Sensor II Connect to designated pins D10 (SDA) and D11 (SCL)
+### _Leaf Wetness Sensor:_
+
+• Connect the signal line to analog pin A0
+
+• This sensor requires a Voltage Divider to step down the signal Use a 10k and 20k resistor as shown in the diagram to protect the ESP32
+### _Fan Control-Relay_
+• Connect the IN pin of the relay to digital pin D2 
+• The relay acts as a switch for the 12V fan motor
+### _Power Management_ 
+• Connect the 12V source to the Buck Converter
+• Ensure the output is set to 5V before connecting to the ESP32 and sensors to prevent damage
+### Software Configuration
+Follow these steps to flash the firmware and start monitoring
+### _i. Install Libraries_
+**Ensure the following libraries are installed in your Arduino IDE:**
+
+• Adafruit_SHT31 (for environmental sensing)
+
+• PubSubClient (for MQTT communication) 
+
+• ThingSpeak (for data logging)
+
+### _ii. Communication Details (Open the code and fill in your credentials)_
+ WiFi Update WIFI_SSID and WIFI_PASSWORD 
+ThingSpeak Enter Think Speak channel number and Think Speak API Key 
+MQTT Verify the MQTT_SERVER address for the greenhouse irrigation control
+
+### _iii. Upload Code:_
+connect the ESP32 to your computer via USB select the correct COM port and click upload
+
+### _iv. Access Dashboard:_
+Once connected open the Serial Monitor (115200 baud) Find the IP address displayed Enter it into any web browser on the same network to view the live Greenhouse Control Dashboard.
+
 
 ### [Data Collected](https://thingspeak.mathworks.com/channels/3222028)
 
