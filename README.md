@@ -10,12 +10,15 @@ This project monitors and controls VPD in a small greenhouse. Temperature and hu
 - [Hardware and assembly](#hardware-and-assembly)
   - [Electronics](#electronics)
   - [General Structure](#general-structure)
-  - [Data Collected](#data-collected)
-  - [VPD Control Logic](#vpd-control-logic)
 - [Instructions](#instructions)
   - [Hardware](#hardware)
   - [Software](#software)
 - [Control and DATA](#control-and-data)
+    - [Data Collected](#data-collected)
+    - [VPD Control Logic](#vpd-control-logic)
+    - [User Interface](user-interface)
+
+---
 
 
 
@@ -60,6 +63,7 @@ SVP = 0.6108 × exp(17.27 × T / (T + 237.3))
 * VPD result in kPa
 
 ### Tomatoes 
+### 🍅🍅🍅
 
 Tomato is part of the Solanaceae family, which also includes potato and tobacco. It is one of the most consumed vegetables in the world after potato, with an annual global production of approximately 180–190 million metric tons and an average consumption of around 20 kg per person worldwide.  
 Tomato is also one of the most commonly used model plants in plant science and plant physiology.
@@ -214,4 +218,16 @@ flowchart TD
     F -->|Yes| G[Mist ON MQTT]
     F -->|No| D
 ```
+
+### User Interface
+
+All sensor and device data (including the fan and mist sprayer) is displayed on an HTML page designed for easy user access.  
+The IP address is shown in the Serial Monitor; you enter it into a web browser to open the dashboard.  
+From there, the page updates live with:
+- 🌡️ Temperature
+- 💧 Humidity
+- 🌿 Leaf Wetness
+- 🌀 Fan status
+- 💦 Mist sprayer status
+- 📈 Optimality for growth status
 
