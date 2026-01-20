@@ -128,11 +128,25 @@ We decided in this project to simulates the vegetative growth phase of tomato pl
 
 5. [**Buck Converter**](https://makershop.ie/DC-DC-Buck-5A?srsltid=AfmBOopnSkC795zfUkoyGhVDZ3jdFz4jpy8cIv-9Tf6MlFavQI_Tk2by)  
    - Converts 12V supply to 5V for ESP32 and sensors  
-<img src="https://github.com/user-attachments/assets/6b067c58-f87a-41ff-b429-d868455b7664" width="200" />
+<img src="https://github.com/user-attachments/assets/6b067c58-f87a-41ff-b429-d868455b7664"
+     width="150"
+     height="120" />
 
 6. [**Relay**](https://www.canadarobotix.com/products/1222?srsltid=AfmBOop1InxmUd8Y3Ksddc2EDyfmVhSQLMjM_4GOhNUmd4CgTlvdJLzY)  
    - Controls Fan and Mist power circuits
 <img width="150" height="720" alt="image" src="https://github.com/user-attachments/assets/e4772b01-e083-4227-a8a8-5f0f9f07df43" />
+
+_Parts Summary_
+
+| Device                              | Quantity |
+| ----------------------------------- | -------- |
+| ESP32 FireBeetle 2                  | 1        |
+| SHT31 Temperature & Humidity Sensor | 2        |
+| Leaf Wetness Sensor                 | 1        |
+| Fan                                 | 1        |
+| Mist Sprayer                        | 1        |
+| Relay Module                        | 1        |
+| Buck Converter                      | 1        |
 
 
 ### General Structure
