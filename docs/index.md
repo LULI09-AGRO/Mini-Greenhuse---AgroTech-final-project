@@ -128,13 +128,11 @@ We decided in this project to simulates the vegetative growth phase of tomato pl
 
 5. [**Buck Converter**](https://makershop.ie/DC-DC-Buck-5A?srsltid=AfmBOopnSkC795zfUkoyGhVDZ3jdFz4jpy8cIv-9Tf6MlFavQI_Tk2by)  
    - Converts 12V supply to 5V for ESP32 and sensors  
-<img src="https://github.com/user-attachments/assets/6b067c58-f87a-41ff-b429-d868455b7664"
-     width="50"
-     height="40" />
+<img src="https://github.com/user-attachments/assets/6b067c58-f87a-41ff-b429-d868455b7664" width="150" />
 
 6. [**Relay**](https://www.canadarobotix.com/products/1222?srsltid=AfmBOop1InxmUd8Y3Ksddc2EDyfmVhSQLMjM_4GOhNUmd4CgTlvdJLzY)  
    - Controls Fan and Mist power circuits
-<img width="150" height="720" alt="image" src="https://github.com/user-attachments/assets/e4772b01-e083-4227-a8a8-5f0f9f07df43" />
+<img src="https://github.com/user-attachments/assets/e4772b01-e083-4227-a8a8-5f0f9f07df43" width="150" />
 
 _Parts Summary_
 
@@ -253,7 +251,9 @@ From there, the page updates live with:
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4425b418-d76d-472b-8136-6f79373578b6"
        width="400" style="margin:20px;" />
+</p>
 
+<p align="center">
   <img src="https://github.com/user-attachments/assets/3fe2458c-c675-4638-995a-3c484355ad86"
        width="400" style="margin:20px;" />
 </p>
