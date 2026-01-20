@@ -2,16 +2,22 @@
 This project monitors and controls VPD in a small greenhouse. Temperature and humidity are measured to calculate VPD, which drives a fan or mist to optimize conditions.
 
 ### Table of Contents
+
 - [Introduction](#introduction)
 - [Background - VPD and Tomatoes](#background---vpd-and-tomatoes)
   - [VPD](#vpd)
-  - [Tomatoes](#tomatoes-)
+  - [Tomatoes](#tomatoes)
 - [Hardware and assembly](#hardware-and-assembly)
   - [Electronics](#electronics)
   - [General Structure](#general-structure)
-  - [Setup Wiring](#setup-wiring)
   - [Data Collected](#data-collected)
   - [VPD Control Logic](#vpd-control-logic)
+- [Instructions](#instructions)
+  - [Hardware](#hardware-1)
+  - [Software](#software)
+- [Control and DATA](#control-and-data)
+
+
 
 
 
@@ -128,8 +134,11 @@ The system monitors both indoor and outdoor conditions to decide whether to **ve
 <img width="565" height="597" alt="image" src="https://github.com/user-attachments/assets/571eaee7-88a2-4c11-b926-49f25b561075" />
 </p>
 
-### Setup Wiring
-Connect the components to the ESP32 Firebeetle board as shown in the provided diagram
+
+## Instructions
+### Hardware
+Connect the components to the ESP32 Firebeetle board as shown in the provided scheme
+
 ### _SHT31 Temperature and Humidity Sensors:_
 • Indoor Sensor I Connect to the primary I2C pins (SDA to 21 SCL to 22)
 
@@ -145,7 +154,7 @@ Connect the components to the ESP32 Firebeetle board as shown in the provided di
 ### _Power Management_ 
 • Connect the 12V source to the Buck Converter
 • Ensure the output is set to 5V before connecting to the ESP32 and sensors to prevent damage
-### Software Configuration
+### Software
 Follow these steps to flash the firmware and start monitoring
 ### _i. Install Libraries_
 **Ensure the following libraries are installed in your Arduino IDE:**
@@ -168,6 +177,8 @@ connect the ESP32 to your computer via USB select the correct COM port and click
 Once connected open the Serial Monitor (115200 baud) Find the IP address displayed Enter it into any web browser on the same network to view the live Greenhouse Control Dashboard.
 
 
+  ## Control and DATA
+  
 ### [Data Collected](https://thingspeak.mathworks.com/channels/3222028)
 
 1. **VPD** (calculated from temperature & humidity via SHT31)   - both indoor and outdoor
@@ -202,6 +213,5 @@ flowchart TD
 
     F -->|Yes| G[Mist ON MQTT]
     F -->|No| D
-
-  
+```
 
