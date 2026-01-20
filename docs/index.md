@@ -19,7 +19,16 @@ This project monitors and controls VPD in a small greenhouse. Temperature and hu
     - [User Interface](#user-interface)
 
 ---
+## Project Files
 
+### Code
+- [Full Code – Warm Weather](Full Code - For Warm Weather)
+- [Demonstration Code](Demonstration Code)
+
+### Media
+- [ESP32 Wiring Scheme](ESP32_SCHEME.jpg)
+
+---
 
 
 
