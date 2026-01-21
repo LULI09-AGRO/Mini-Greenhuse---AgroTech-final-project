@@ -164,6 +164,8 @@ The system monitors both indoor and outdoor conditions to decide whether to **ve
 <img width="565" height="597" alt="image" src="https://github.com/user-attachments/assets/571eaee7-88a2-4c11-b926-49f25b561075" />
 </p>
 
+<img src="https://github.com/user-attachments/assets/c0e2e153-4a2a-4e52-a6fc-8ee81b3daedd" width="250" />
+
 
 ## Instructions
 ### Hardware
