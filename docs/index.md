@@ -248,5 +248,5 @@ From there, the page updates live with:
 ## Solutions and Further Steps
 The goal of the control system was ultimately to maintain an optimal VPD range for the plant’s growth stage.
 During system operation, an important parameter that was not controlled became apparent: temperature control. Due to cold nights, the VPD dropped to very low levels, with no possibility of compensation, since humidity was the only parameter under active control.
-Therefore, as future improvements, additional devices enabling temperature control—such as heaters or similar equipment—would be integrated into the system.
+Therefore, as future improvements, additional devices enabling temperature control, such as heaters or similar equipment, would be integrated into the system.
 
