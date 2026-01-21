@@ -1,11 +1,14 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  display: flex;
+  background: #b6dcdd;
 }
+
 
 .sidebar {
   width: 220px;
-  background: #b6dcdd;
+  background: #f5f7fa;
   height: 100vh;
   position: fixed;
   padding: 20px;
