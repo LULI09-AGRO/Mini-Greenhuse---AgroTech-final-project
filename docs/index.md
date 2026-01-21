@@ -23,18 +23,10 @@ This project monitors and controls VPD in a small greenhouse. Temperature and hu
     - [Data Collected](#data-collected)
     - [VPD Control Logic](#vpd-control-logic)
     - [User Interface](#user-interface)
-- [Demonstration](#demonstration)
-    - [In action Video](#in-action-Video)
-    - [Pictures](#pictures)
 
 ---
-## Project Files
 
-### Code
-- [Full Code – Warm Weather](https://github.com/LULI09-AGRO/Mini-Greenhuse---AgroTech-final-project/blob/main/Full%20Code%20-%20for%20warm%20weather)
-- [Demonstration Code](https://github.com/LULI09-AGRO/Mini-Greenhuse---AgroTech-final-project/blob/main/Demonstration%20Code)
-
-### Media
+### Scheme
 - [ESP32 Wiring Scheme](ESP32_SCHEME.jpg)
 
 ---
@@ -249,23 +241,4 @@ From there, the page updates live with:
 - 💦 Mist sprayer status
 - 📈 Optimality for growth status
 
-## Demonstration
 
-### In action Video
-[🎥 System demonstration](https://youtu.be/j-JSnl7hiJo)
-
-### Pictures
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/4425b418-d76d-472b-8136-6f79373578b6"
-       width="400" style="margin:20px;" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/3fe2458c-c675-4638-995a-3c484355ad86"
-       width="400" style="margin:20px;" />
-</p>
-
-<p align="center">
-  <img width="300" height="485" alt="image" src="https://github.com/user-attachments/assets/67ed01b9-1e81-45d9-9cce-deb3681b5af2" />
-
-</p>
