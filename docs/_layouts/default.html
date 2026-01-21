@@ -21,11 +21,10 @@
     <a href="{{ site.baseurl }}/index.html">Home</a>
     <hr style="border-color:#2a334d;" />
 
-    {% for page in site.pages %}
-      {% if page.path != "index.md" and page.path != "index.html" and page.path contains ".md" %}
-        <a href="{{ page.url }}">{{ page.title | default: page.name }}</a>
-      {% endif %}
-    {% endfor %}
+    <a href="{{ site.baseurl }}/full-code.html">Full Code – Warm Weather</a>
+    <a href="{{ site.baseurl }}/demonstration-code.html">Demonstration Code</a>
+    <a href="{{ site.baseurl }}/demonstration.html">Images</a>
+
   </div>
 
   <div class="content">
