@@ -206,7 +206,7 @@ connect the ESP32 to your computer via USB select the correct COM port and click
 Once connected open the Serial Monitor (115200 baud) Find the IP address displayed Enter it into any web browser on the same network to view the live Greenhouse Control Dashboard.
 
 
-  ## Control and DATA
+## Control and DATA
   
 ### [Data Collected](https://thingspeak.mathworks.com/channels/3222028)
 
