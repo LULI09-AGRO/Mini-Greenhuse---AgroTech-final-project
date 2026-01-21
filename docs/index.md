@@ -3,7 +3,9 @@ layout: default
 title: Home
 ---
 
-# Mini-Greenhouse - AgroTech
+# Mini-Greenhouse - AgroTech final project
+
+By- Liel Zang ; Aviad Karmazyn ; Liron Odeni ; Liel Ben Lulu
 
 This project monitors and controls VPD in a small greenhouse. Temperature and humidity are measured to calculate VPD, which drives a fan or mist to optimize conditions.
 
