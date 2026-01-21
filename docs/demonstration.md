@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Pictures
+title: Pictures and Videos
 ---
 
 # Pictures
