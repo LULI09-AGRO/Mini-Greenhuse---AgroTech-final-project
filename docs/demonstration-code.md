@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Demonstration code 
+title: Demonstration Code
 ---
 /*********************
  * PROJECT: Mini-Greenhouse VPD Control System
